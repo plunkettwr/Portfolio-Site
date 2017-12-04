@@ -1,0 +1,36 @@
+* {
+	box-sizing: border-box;
+}
+
+body {	
+	max-width: 85vw;
+	margin: auto;
+}
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;	
+	align-items: center;
+}
+
+.header {
+	min-width: 100%;
+	border-bottom: 5px solid #2d3c49;
+	
+}
+
+.logo img {
+	max-width: 100px;
+	border-radius: 50%;
+	border: 1px solid #2d3c49;
+}
+
+.name {
+	text-align: right;
+	font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
+}
+
+.name * {
+	margin: 0;
+	font-weight: 500;
+}
