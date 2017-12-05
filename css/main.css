@@ -1,36 +1,135 @@
 * {
-	box-sizing: border-box;
+	box-sizing: border-box;	
 }
 
 body {	
-	max-width: 85vw;
+	width: 85vw;
+	max-width: 1080px;
 	margin: auto;
 }
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 .wrapper {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;	
-	align-items: center;
+	flex-wrap: wrap;	
 }
 
 .header {
-	min-width: 100%;
-	border-bottom: 5px solid #2d3c49;
-	
+	flex-direction: column;
+	align-items: center;
+	border-bottom: 5px groove #3268AD;
+	font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
 }
 
-.logo img {
+.logo {
+	margin: 5px;
+}
+
+.logo-img {
 	max-width: 100px;
 	border-radius: 50%;
-	border: 1px solid #2d3c49;
+	border: 2px outset #3268AD;
 }
 
 .name {
-	text-align: right;
-	font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
+	text-align: center;
 }
 
 .name * {
 	margin: 0;
 	font-weight: 500;
+}
+
+.name h1 {
+	font-size: 40px;
+}
+
+.name h3 {
+	font-size: 18px;
+}
+
+.primary-image-container {
+	margin-top: 20px;
+}
+
+.primary-image {
+	width: 100%;
+}
+
+.featured-work {
+	width: 100%;
+	justify-content: space-evenly;
+
+	font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
+	text-align: center;
+}
+
+.featured-work h3 {
+	min-width: 100%;
+	margin: 10px 0;
+	
+	font-size: 30px;
+    font-weight: 800;
+    color: #314D5F;
+
+}
+
+.featured-work article {
+	width: 80%;
+}
+
+.article-img a img {
+	display: block;
+	width: 80%;
+	margin: auto;
+}
+
+.work-title {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.work-link {
+	font-size: 14px;
+}
+
+.work-description {
+	display: none;
+}
+
+@media screen and (min-width: 421px){
+
+	.header {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.featured-work article {
+		width: 40%;
+	}
+}
+
+@media screen and (min-width: 700px){
+
+	.featured-work {
+		display: block;
+	}
+	
+	.featured-work article {
+		display: flex;
+		flex-direction: column;	
+		flex-wrap: wrap;
+		width: 100%;
+		max-height: 250px;
+	}
+
+	.article-img {
+		height: 100%;
+	}
+	
 }
