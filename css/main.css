@@ -1,3 +1,7 @@
+/*Main CSS for screen width < 475px. Media queries at bottom of file adjust CSS for larger screens*/
+
+/***************STYLES APPLIED TO ENTIRE PAGE*******************/
+
 * {
 	box-sizing: border-box;
 }
@@ -7,7 +11,7 @@ body {
 	max-width: 1080px;
 	margin: auto;
 
-	font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 
 a {
@@ -20,10 +24,12 @@ a {
 	flex-wrap: wrap;
 }
 
+/*****************HEADER***************************************/
+
 .header {
 	flex-direction: column;
 	align-items: center;
-	border-bottom: 5px groove #3268AD;
+	border-bottom: 5px groove #3268ad;
 }
 
 .logo {
@@ -33,7 +39,7 @@ a {
 .logo-img {
 	max-width: 100px;
 	border-radius: 50%;
-	border: 2px outset #3268AD;
+	border: 2px outset #3268ad;
 }
 
 .name {
@@ -53,13 +59,28 @@ a {
 	font-size: 18px;
 }
 
+/**************PRIMARY IMAGE******************************/
+
 .primary-image-container {
+	position: relative;
 	margin-top: 20px;
 }
 
 .primary-image {
 	width: 100%;
 }
+
+.img-citation {
+	position: absolute;
+	font-size: 2.2vw;
+	font-style: italic;
+	font-weight: 700;
+	left: 1%;
+	bottom: 0;
+	color: #c1bea2;
+}
+
+/************FEATURED WORK********************************/
 
 #featured-work-header {
 	min-width: 100%;
@@ -68,15 +89,14 @@ a {
 
 	font-size: 30px;
     font-weight: 800;
-    color: #314D5F;
-
+    color: #314d5f;
 }
 
 .featured-work {
 	width: 100%;
 	justify-content: space-evenly;
 
-	font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
+	font-family: "Open Sans Condensed", sans-serif;
 	text-align: center;
 }
 
@@ -89,6 +109,7 @@ a {
 	box-shadow: 0 0 15px rgba(0,0,0,0.4)
 }
 
+/*MAKE THE ANCHOR TAG ACT AS A BLOCK FLEX ITEM*/
 .article-img a img {
 	display: block;
 	width: 80%;
@@ -113,11 +134,16 @@ a {
 	overflow-wrap: break-word;
 }
 
+/*HIDE WORK DESCRIPTION ON SMALLER SCREENS*/
 .work-description {
 	display: none;
 }
 
-@media screen and (min-width: 421px){
+/*****************MEDIA QUERIES*******************************/
+
+/*****************MEDIUM VIEWPORT*****************************/
+
+@media screen and (min-width: 475px) {
 
 	.header {
 		flex-direction: row;
@@ -134,26 +160,32 @@ a {
 	}
 }
 
-@media screen and (min-width: 700px){
+/****************LARGE VIEWPORT*********************************/
+
+@media screen and (min-width: 800px) {
 
 	#featured-work-header {
 		text-align-last: left;
 	}
 
+	/*REMOVE display:flex FROM .featured-work div*/
 	.featured-work {
 		display: block;
 	}
 
+	/*MAKE EACH ARTICLE A FLEX CONTAINER*/
 	.featured-work article {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		align-items: center;
+
 		width: 100%;
 	}
 
+	/*MAKE FEATURED WORK ARTICLE ALTERNATE ORDERING AND BACKGROUND COLOR*/
 	.featured-work article:nth-child(odd) {
-		background-color: #EFF9FD;
+		background-color: #eff9fd;
 	}
 
 	.featured-work article:nth-child(even) :nth-child(1) {
@@ -169,7 +201,7 @@ a {
 	}
 
 	.article-img a img {
-		width: 100%;
+		min-width: 100%;
 		margin: auto 0;
 	}
 
@@ -177,7 +209,16 @@ a {
 		width: 70%;
 	}
 
+	/*REMOVE display:none FROM WORK DESCRIPTION*/
 	.work-description {
 		display: block;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+
+	/*PREVENT TEXT FROM CONTINUING TO GROW*/
+	.img-citation {
+		font-size: 23px;
 	}
 }
