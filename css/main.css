@@ -1,7 +1,6 @@
 /*Main CSS for screen width < 475px. Media queries at bottom of file adjust CSS for larger screens*/
 
 /***************STYLES APPLIED TO ENTIRE PAGE*******************/
-
 * {
 	box-sizing: border-box;
 }
@@ -142,6 +141,22 @@ a {
 /*HIDE WORK DESCRIPTION ON SMALLER SCREENS*/
 .work-description {
 	display: none;
+}
+
+/*********************FOOTER**********************************/
+
+footer {
+	display: flex;
+	text-align: center;
+}
+
+footer p {
+	width: 100%;
+}
+
+footer a:hover {
+	font-weight: 700;
+	text-decoration: underline;
 }
 
 /*****************MEDIA QUERIES*******************************/
