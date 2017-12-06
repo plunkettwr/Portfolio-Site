@@ -1,11 +1,13 @@
 * {
-	box-sizing: border-box;	
+	box-sizing: border-box;
 }
 
-body {	
+body {
 	width: 85vw;
 	max-width: 1080px;
 	margin: auto;
+
+	font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
 }
 
 a {
@@ -15,14 +17,13 @@ a {
 
 .wrapper {
 	display: flex;
-	flex-wrap: wrap;	
+	flex-wrap: wrap;
 }
 
 .header {
 	flex-direction: column;
 	align-items: center;
 	border-bottom: 5px groove #3268AD;
-	font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
 }
 
 .logo {
@@ -60,6 +61,17 @@ a {
 	width: 100%;
 }
 
+#featured-work-header {
+	min-width: 100%;
+	margin: 10px 0;
+	text-align-last: center;
+
+	font-size: 30px;
+    font-weight: 800;
+    color: #314D5F;
+
+}
+
 .featured-work {
 	width: 100%;
 	justify-content: space-evenly;
@@ -68,24 +80,27 @@ a {
 	text-align: center;
 }
 
-.featured-work h3 {
-	min-width: 100%;
-	margin: 10px 0;
-	
-	font-size: 30px;
-    font-weight: 800;
-    color: #314D5F;
-
+.featured-work article {
+	margin: 5px 0;
+	width: 80%;
 }
 
-.featured-work article {
-	width: 80%;
+.featured-work article:hover {
+	box-shadow: 0 0 15px rgba(0,0,0,0.4)
 }
 
 .article-img a img {
 	display: block;
 	width: 80%;
 	margin: auto;
+}
+
+.project-info-container {
+	display: block;
+}
+
+.project-info-container * {
+	margin: 5px 0;
 }
 
 .work-title {
@@ -95,6 +110,7 @@ a {
 
 .work-link {
 	font-size: 14px;
+	overflow-wrap: break-word;
 }
 
 .work-description {
@@ -109,6 +125,10 @@ a {
 		align-items: center;
 	}
 
+	.name {
+		text-align: right;
+	}
+
 	.featured-work article {
 		width: 40%;
 	}
@@ -116,20 +136,48 @@ a {
 
 @media screen and (min-width: 700px){
 
+	#featured-work-header {
+		text-align-last: left;
+	}
+
 	.featured-work {
 		display: block;
 	}
-	
+
 	.featured-work article {
 		display: flex;
-		flex-direction: column;	
-		flex-wrap: wrap;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: center;
 		width: 100%;
-		max-height: 250px;
+	}
+
+	.featured-work article:nth-child(odd) {
+		background-color: #EFF9FD;
+	}
+
+	.featured-work article:nth-child(even) :nth-child(1) {
+		order: 1;
+	}
+
+	.featured-work article:nth-child(even) :nth-child(2) {
+		order: 0;
 	}
 
 	.article-img {
-		height: 100%;
+		width: 30%;
 	}
-	
+
+	.article-img a img {
+		width: 100%;
+		margin: auto 0;
+	}
+
+	.project-info-container {
+		width: 70%;
+	}
+
+	.work-description {
+		display: block;
+	}
 }
